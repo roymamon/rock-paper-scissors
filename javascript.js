@@ -42,17 +42,34 @@ function playRound(humansChoice, computersChoice){
         }
     else {
         computersScore++;
-        "YOU LOSE!";
+        return "YOU LOSE!";
     }    
 }
-const humansSelection = getHumansChoice();
-const computersSelection = getComputersChoice();
-
-console.log("You Chose: " + humansSelection);
-console.log("Opponent Chose: " + computersSelection);
-
-console.log(playRound(humansSelection, computersSelection));
 
 function playGame() {
+    
+    for (let i = 0 ; i <= 4 ; i++) {
+        
+        const humansSelection = getHumansChoice();
+        console.log("Round " + (i+1));
+        const computersSelection = getComputersChoice();
+        console.log("You Chose: " + humansSelection);
+        console.log("Opponent Chose: " + computersSelection);
+        console.log(playRound(humansSelection, computersSelection));
+    }
+    console.log("Game over, Results:");
+    console.log("Your Score: " + humansScore);
+    console.log("Opponents Score: " + computersScore);
+    if ( humansScore == computersScore) {
+        console.log("ITS A TIE!");
+    }
+    else if (humansScore > computersScore) {
+        console.log("Congrats, YOU WON");
+    }
+    else {
+        console.log("YOU LOST :(");
+    }
 
 }
+
+playGame();
