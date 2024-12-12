@@ -1,33 +1,58 @@
-let humanScore = 0;
-let computerScore = 0;
+let humansScore = 0;
+let computersScore = 0;
+
 console.log("Hey, welcome to Rock-Paper-Scissors!");
-function getComputerChoice() {
-    let c = Math.floor(Math.random()*3);
-    switch(c){
+
+function getComputersChoice() {
+    let computersChoice = Math.floor(Math.random()*3);
+    switch(computersChoice){
         case 0:
-            return "Opponent: Rock";
+            return "rock";
         case 1:
-            return "Opponent: Paper";
+            return "paper";
         case 2:
-            return "Opponent: Scissors";            
+            return "scissors";            
     }
 }
-console.log(getComputerChoice());
-function getHumanChoice() {
-    let playersChoice = prompt("Choose: Rock, Paper, Scissors");
-    switch (playersChoice.toLowerCase()) {
+
+function getHumansChoice() {
+    let humansChoice = prompt("Choose: Rock, Paper, Scissors");
+    switch (humansChoice.toLowerCase()) {
         case "rock":
-            return "Player: Rock";
+            return "rock";
         case "paper":    
-            return "Player: Paper"  
+            return "paper";  
         case "scissors":    
-            return "Player: Scissors" 
+            return "scissors"; 
         default:
             alert("Invalid Input, Please Try Again");
-            return getHumanChoice();     
+            return getHumansChoice();     
     }
 }
-console.log(getHumanChoice());
-function playRound(humanChoise,computerChoise){
-    
+
+function playRound(humansChoice, computersChoice){
+    if (humansChoice == computersChoice) {
+        return "ITS A TIE!";
+    }
+    if ((humansChoice == "rock" && computersChoice == "scissors")
+      || (humansChoice == "paper" && computersChoice == "rock")
+        || (humansChoice == "scissors" && computersChoice == "paper")) {
+            humansScore++;
+            return "YOU WIN!";
+        }
+    else {
+        computersScore++;
+        "YOU LOSE!";
+    }    
+}
+const humansSelection = getHumansChoice();
+const computersSelection = getComputersChoice();
+
+console.log("You Chose: " + humansSelection);
+console.log("Opponent Chose: " + computersSelection);
+
+console.log(playRound(humansSelection, computersSelection));
+
+function playGame() {
+
 }
