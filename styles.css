@@ -1,6 +1,40 @@
 body {
-    background-color: rgb(17, 17, 86);
-    display: flex;
-    justify-content: center;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #2a2837;
     color: white;
-}
+  }
+
+  
+  button {
+    margin: 20px;
+    padding: 20px 40px;
+    font-size: 24px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+    color: #2a2837;
+  }
+  
+  button:hover {
+    background-color: #9d96ca;
+  }
+  
+  button:active {
+    transform: scale(1.2); /* Makes the button grow by 20% */
+  }
+  
+  #result {
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  #score {
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+  }
